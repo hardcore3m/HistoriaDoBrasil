@@ -24,14 +24,14 @@ namespace PresidenteBr.Presentation
             Console.WriteLine("TEOPATRIAAMADAIDOLATRADASALVESALVE!");
 
             Console.WriteLine("\n\nDigite sua Opção\n1 - Monarcas do Brasil\n2 - Presidentes do Brasil");
-            int userOption = Convert.ToInt32(Console.ReadLine());
+            int select = Convert.ToInt32(Console.ReadLine());
 
-            if (userOption == 1)
+            if (select == 1)
             {
                 Console.Clear();
                 Monarquia();
             }
-            else if (userOption == 2)
+            else if (select == 2)
             {
                 Console.Clear();
                 Republica();
@@ -50,9 +50,9 @@ namespace PresidenteBr.Presentation
         }
         static void Continue()
         {
-            Console.WriteLine("\n===========================\n\nDeseja fazer nova consulta?\n S - Sim | N - Não");
-            string reset = Console.ReadLine();
-            if (reset == "s" || reset == "S")
+            Console.WriteLine("\n===========================\n\nDeseja fazer nova consulta?\n 1 - Sim ");
+            GetUserInput();
+            if (select==1)
             {
                 Main();
             }
@@ -114,6 +114,26 @@ namespace PresidenteBr.Presentation
 
             monarcas.Add(new Monarca("Dom Manuel I", "O Venturoso", "22 de Abril de 1500", 1500, "13 de Dezembro de 1521", 1521, "31 de Maio de 1469 - Alcochete, Portugal", "13 de Dezembro de 1521 - Lisboa, Portugal", Dinastia.Avis, Reinado.Colonial));
             monarcas.Add(new Monarca("Dom João III", "O Piedoso", "13 de Dezembro de 1521", 1521, "11 de Junho de 1557", 1557, "06 de junho de 1502 - Lisboa, Portugal", "11 de junho de 1557 - Lisboa, Portugal", Dinastia.Avis, Reinado.Colonial));
+            monarcas.Add(new Monarca("Dom Sebastião I", "O Desejado", "11 de junho de 1557", 1557, "4 de agosto de 1578", 1578, "20 de janeiro de 1554 - Paço da Ribeira, Lisboa", "4 de agosto de 1578 - Alcácer-Quibir", Dinastia.Avis, Reinado.Colonial));
+            monarcas.Add(new Monarca("Dom Henrique I", "O Casto", "4 de agosto de 1578", 1578, "31 de janeiro de 1580", 1580, "31 de janeiro de 1512 - Lisboa", "31 de janeiro de 1580 - Almeirim, Portugal", Dinastia.Avis, Reinado.Colonial));
+            monarcas.Add(new Monarca("Filipe I", "O Prudente", "17 de abril de 1581", 1581, "13 de setembro de 1598", 1598, "21 de maio de 1527 - Valladolid, Espanha", "13 de setembro de 1598 - El Escorial", Dinastia.habsburgo, Reinado.UniaoIberica));
+            monarcas.Add(new Monarca("Filipe II", "O Pio", "13 de setembro de 1598", 1598, "31 de março de 1621	", 1621, "14 de abril de 1578 - Madrid", "31 de março de 1621 - Madrid", Dinastia.habsburgo, Reinado.UniaoIberica));
+            monarcas.Add(new Monarca("Filipe III", "O Grande", "31 de março de 1621", 1621, "1 de dezembro de 1640", 1640, "8 de abril de 1605 - Valladolid, Espanha", "17 de setembro de 1665 - Madrid", Dinastia.habsburgo, Reinado.UniaoIberica));
+            monarcas.Add(new Monarca("D. João IV", "O Restaurador", "1 de dezembro de 1640", 1640, "6 de dezembro de 1656", 1656, "19 de março de 1604 - Paço Ducal de Vila Viçosa", "6 de novembro de 1656 - Paço da Ribeira, Lisboa", Dinastia.Bragança, Reinado.Restauracao));
+            monarcas.Add(new Monarca("D. Afonso VI", "O Vitorioso", "6 de dezembro de 1656", 1656, "12 de setembro de 1683", 1683, "21 de agosto de 1643 - Paço da Ribeira, Lisboa", "12 de setembro de 1683 - Palácio de Sintra", Dinastia.Bragança, Reinado.UniaoIberica));
+            // monarcas.Add(new Monarca("","","",,"",,"","",Dinastia.,Reinado.));
+            // monarcas.Add(new Monarca("","","",,"",,"","",Dinastia.,Reinado.));
+            // monarcas.Add(new Monarca("","","",,"",,"","",Dinastia.,Reinado.));
+            // monarcas.Add(new Monarca("","","",,"",,"","",Dinastia.,Reinado.));
+            // monarcas.Add(new Monarca("","","",,"",,"","",Dinastia.,Reinado.));
+            // monarcas.Add(new Monarca("","","",,"",,"","",Dinastia.,Reinado.));
+
+            // monarcas.Add(new Monarca("","","",,"",,"","",Dinastia.,Reinado.));
+            // monarcas.Add(new Monarca("","","",,"",,"","",Dinastia.,Reinado.));
+
+            monarcas.Add(new Monarca("D. Pedro I","O Libertador","12 de outubro de 1822",1822,"7 de abril de 1831",1831,"12 de outubro de 1798 - Palácio Real de Queluz","24 de setembro de 1834 - Palácio Real de Queluz",Dinastia.Bragança,Reinado.BrasilImperio));
+            monarcas.Add(new Monarca("D. Pedro II","O Magnânimo","7 de abril de 1831",1831,"15 de novembro de 1889",1889,"2 de dezembro de 1825 - Palácio de São Cristóvão, Rio de Janeiro","5 de dezembro de 1891 - Paris",Dinastia.Bragança,Reinado.BrasilImperio));
+
 
             MonarquiaTitle();
 
@@ -141,17 +161,17 @@ namespace PresidenteBr.Presentation
                 if (select == 1)
                 {
                     Console.WriteLine("\n\n================\nDinastia de Avis\n================");
-                    chosenDinasty=Dinastia.Avis;
+                    chosenDinasty = Dinastia.Avis;
                 }
                 else if (select == 2)
                 {
                     Console.WriteLine("\n\n=====================\nDinastia de Habsburgo\n=====================");
-                    chosenDinasty=Dinastia.habsburgo;
+                    chosenDinasty = Dinastia.habsburgo;
                 }
                 else if (select == 3)
                 {
                     Console.WriteLine("\n\n================\nDinastia de Bragança\n================");
-                    chosenDinasty=Dinastia.Bragança;
+                    chosenDinasty = Dinastia.Bragança;
                 }
                 else
                 {
@@ -225,8 +245,8 @@ namespace PresidenteBr.Presentation
             {
                 MonarquiaTitle();
                 Console.WriteLine("\nInsira uma ano entre 1500 e 1889");
-
                 GetUserInput();
+
                 if (select >= 1500 && select <= 1889)
                 {
                     foreach (Monarca rei in monarcas)
@@ -264,7 +284,6 @@ namespace PresidenteBr.Presentation
             {
                 InvalidOption();
             }
-
         }
 
         static void MonarquiaTitle()
@@ -283,8 +302,8 @@ namespace PresidenteBr.Presentation
 
             RepublicaTitle();
             Console.WriteLine("\n\nDigite sua Opção:\n1 - Presidentes por ordem\n2 - Presidentes por período\n3 - Presidentes por ascendência \n4 - Consultar uma data");
-            int userOption = Convert.ToInt32(Console.ReadLine());
-            if (userOption == 1)
+            GetUserInput();
+            if (select == 1)
             {
                 RepublicaTitle();
                 foreach (Presidente pres in presidentes)
@@ -293,13 +312,15 @@ namespace PresidenteBr.Presentation
                 }
                 Continue();
             }
-            else if (userOption == 2)
+            else if (select == 2)
             {
                 RepublicaTitle();
                 Console.WriteLine("\n\nEscolha um periodo:\n 1 - República Velha (1889 a 1930)\n 2 - Segunda República(1930 a 1937)\n 3 - Estado Novo(1937 a 1946)\n 4 - Republica Populista(1946 a 1964)\n 5 - Ditadura Militar(1964 a 1985)\n 6 - Nova República(1985 a 2022)");
                 GetUserInput();
+                Sorry();
+                Continue();
             }
-            else if (userOption == 3)
+            else if (select == 3)
             {
                 RepublicaTitle();
                 Console.WriteLine("\n\nEscolha um modo de ascensão:\n 1 - Eleições diretas\n 2 - Linha sucessória\n 3 - Eleições indiretas, emposse ou golpe\n 4 - Impedidos ou falecidos antes do empossamento");
@@ -308,10 +329,36 @@ namespace PresidenteBr.Presentation
                 Continue();
 
             }
-            else if (userOption == 4)
+            else if (select == 4)
             {
                 RepublicaTitle();
-                PutDateRepublic();
+                Console.WriteLine("\nInsira uma ano entre 1889 e 2022");
+                GetUserInput();
+
+                if (select >= 1889 && select <= 2022)
+                {
+
+
+                    foreach (Presidente pres in presidentes)
+                    {
+                        if (select >= pres.startYear && select <= pres.endYear)
+                        {
+                            Console.WriteLine($"\n{pres.QuickList(pres.shortName, pres.career, pres.arrival, pres.conclusion)}");
+                        }
+                    }
+                    Continue();
+                }
+                else if (select < 1889)
+                {
+                    Console.WriteLine("\nO Brasil ainda não era indepente nessa época.\n\nTente (M)onarquia");
+                    Console.WriteLine("\n\n\"Pedro, se o Brasil se separar, antes seja para ti, que me hás de respeitar, do que para algum desses aventureiros\" - Dom joao VI");
+                    Continue();
+                }
+                else if (select > 2022)
+                {
+                    Console.WriteLine("\nVocê inseriu uma data no futuro.\n\nProvalvemente não teremos mais democracia nesta época, nem votação digital.");
+                    PutDateRepublic();
+                }
             }
             else
             {
@@ -329,25 +376,7 @@ namespace PresidenteBr.Presentation
         }
         static void PutDateRepublic()
         {
-            Console.WriteLine("\nInsira uma ano entre 1889 e 2022");
 
-            GetUserInput();
-            if (select >= 1889 && select <= 2022)
-            {
-                Sorry();
-                Continue();
-            }
-            else if (select < 1889)
-            {
-                Console.WriteLine("\nO Brasil ainda não era indepente nessa época.\n\nTente (M)onarquia");
-                Console.WriteLine("\n\n\"Pedro, se o Brasil se separar, antes seja para ti, que me hás de respeitar, do que para algum desses aventureiros\" - Dom joao VI");
-                Continue();
-            }
-            else if (select > 2022)
-            {
-                Console.WriteLine("\nVocê inseriu uma data no futuro.\n\nProvalvemente não teremos mais democracia nesta época, nem votação digital.");
-                PutDateRepublic();
-            }
         }
 
         static void Fail()

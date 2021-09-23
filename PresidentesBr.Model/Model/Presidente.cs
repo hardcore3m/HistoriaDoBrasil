@@ -41,7 +41,7 @@ namespace PresidentesBr.Model
 
         public string QuickList(string shortName,string career, string arrival, string conusion)
         {
-            return $"{shortName}\t\t {career} de carreira presidiu o brasil de {arrival} até {conclusion}";
+            return $"{shortName}\t\t {career} de carreira, presidiu o brasil de {arrival} até {conclusion}";
         }
         public bool Equals(Presidente other)
         {
@@ -49,7 +49,7 @@ namespace PresidentesBr.Model
             return (this.shortName.Equals(other.shortName));
         }
         public string ListPresidentes(int order, string shortName, string name,EMandato mandato,ERepublica republica, string arrival, int startYear, string conclusion, int endYear, string born, string death, string career, string consort, string party){
-            return $"{shortName}, {career} de carreira, presidiu o brasil de {arrival} até {conclusion}";
+            return $"{shortName}\t\t {career} de carreira, presidiu o brasil de {arrival} até {conclusion}";
         }
     }
 }
