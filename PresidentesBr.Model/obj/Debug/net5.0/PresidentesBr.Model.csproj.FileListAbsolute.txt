@@ -1,0 +1,16 @@
+/home/rafael/Git/Projetos/PresidentesBr/PresidentesBr.Model/obj/Debug/net5.0/PresidentesBr.Model.csproj.AssemblyReference.cache
+/home/rafael/Git/Projetos/PresidentesBr/PresidentesBr.Model/obj/Debug/net5.0/PresidentesBr.Model.GeneratedMSBuildEditorConfig.editorconfig
+/home/rafael/Git/Projetos/PresidentesBr/PresidentesBr.Model/obj/Debug/net5.0/PresidentesBr.Model.AssemblyInfoInputs.cache
+/home/rafael/Git/Projetos/PresidentesBr/PresidentesBr.Model/obj/Debug/net5.0/PresidentesBr.Model.AssemblyInfo.cs
+/home/rafael/Git/Projetos/PresidentesBr/PresidentesBr.Model/obj/Debug/net5.0/PresidentesBr.Model.csproj.CoreCompileInputs.cache
+/home/rafael/Git/Projetos/PresidentesBr/PresidentesBr.Model/bin/Debug/net5.0/PresidentesBr.Model
+/home/rafael/Git/Projetos/PresidentesBr/PresidentesBr.Model/bin/Debug/net5.0/PresidentesBr.Model.deps.json
+/home/rafael/Git/Projetos/PresidentesBr/PresidentesBr.Model/bin/Debug/net5.0/PresidentesBr.Model.runtimeconfig.json
+/home/rafael/Git/Projetos/PresidentesBr/PresidentesBr.Model/bin/Debug/net5.0/PresidentesBr.Model.runtimeconfig.dev.json
+/home/rafael/Git/Projetos/PresidentesBr/PresidentesBr.Model/bin/Debug/net5.0/PresidentesBr.Model.dll
+/home/rafael/Git/Projetos/PresidentesBr/PresidentesBr.Model/bin/Debug/net5.0/ref/PresidentesBr.Model.dll
+/home/rafael/Git/Projetos/PresidentesBr/PresidentesBr.Model/bin/Debug/net5.0/PresidentesBr.Model.pdb
+/home/rafael/Git/Projetos/PresidentesBr/PresidentesBr.Model/obj/Debug/net5.0/PresidentesBr.Model.dll
+/home/rafael/Git/Projetos/PresidentesBr/PresidentesBr.Model/obj/Debug/net5.0/ref/PresidentesBr.Model.dll
+/home/rafael/Git/Projetos/PresidentesBr/PresidentesBr.Model/obj/Debug/net5.0/PresidentesBr.Model.pdb
+/home/rafael/Git/Projetos/PresidentesBr/PresidentesBr.Model/obj/Debug/net5.0/PresidentesBr.Model.genruntimeconfig.cache

@@ -1,0 +1,116 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/rafael/Git/Projetos/PresidentesBr/PresidenteBr.Presentation/PresidenteBr.Presentation.csproj": {}
+  },
+  "projects": {
+    "/home/rafael/Git/Projetos/PresidentesBr/PresidenteBr.Presentation/PresidenteBr.Presentation.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/rafael/Git/Projetos/PresidentesBr/PresidenteBr.Presentation/PresidenteBr.Presentation.csproj",
+        "projectName": "PresidenteBr.Presentation",
+        "projectPath": "/home/rafael/Git/Projetos/PresidentesBr/PresidenteBr.Presentation/PresidenteBr.Presentation.csproj",
+        "packagesPath": "/home/rafael/.nuget/packages/",
+        "outputPath": "/home/rafael/Git/Projetos/PresidentesBr/PresidenteBr.Presentation/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/rafael/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "/home/rafael/Git/Projetos/PresidentesBr/PresidentesBr.Model/PresidentesBr.Model.csproj": {
+                "projectPath": "/home/rafael/Git/Projetos/PresidentesBr/PresidentesBr.Model/PresidentesBr.Model.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.401/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/rafael/Git/Projetos/PresidentesBr/PresidentesBr.Model/PresidentesBr.Model.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/rafael/Git/Projetos/PresidentesBr/PresidentesBr.Model/PresidentesBr.Model.csproj",
+        "projectName": "PresidentesBr.Model",
+        "projectPath": "/home/rafael/Git/Projetos/PresidentesBr/PresidentesBr.Model/PresidentesBr.Model.csproj",
+        "packagesPath": "/home/rafael/.nuget/packages/",
+        "outputPath": "/home/rafael/Git/Projetos/PresidentesBr/PresidentesBr.Model/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/rafael/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.401/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

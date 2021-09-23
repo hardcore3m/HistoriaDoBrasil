@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "PresidenteBr.Presentation/1.0.0": {
+        "dependencies": {
+          "PresidentesBr.Model": "1.0.0"
+        },
+        "runtime": {
+          "PresidenteBr.Presentation.dll": {}
+        }
+      },
+      "PresidentesBr.Model/1.0.0": {
+        "runtime": {
+          "PresidentesBr.Model.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "PresidenteBr.Presentation/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PresidentesBr.Model/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
