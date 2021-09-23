@@ -5,12 +5,14 @@ namespace PresidentesBr.Model.Enums
         Avis,
         habsburgo,
         Bragança,
+        Empty
     }
     public enum Reinado{
         Colonial,
         UniaoIberica,
         Restauracao,
         ReinoUnido,
-        BrasilImperio
+        BrasilImperio,
+        Empty
     }
 }

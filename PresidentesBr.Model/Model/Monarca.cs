@@ -54,7 +54,7 @@ namespace PresidentesBr.Model
 
             if (reinado == Reinado.Colonial)
             {
-                this.sReinado = "O reino de Portugal e Algarves ";
+                this.sReinado = "O reino de Portugal e Algarves";
             }
             else if(reinado==Reinado.UniaoIberica)
             {
