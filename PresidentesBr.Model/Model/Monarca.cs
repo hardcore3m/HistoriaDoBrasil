@@ -31,9 +31,8 @@ namespace PresidentesBr.Model
         public Reinado reinado { get; set; }
         public string sDinastia;
         public string sReinado;
-        public override string ToString()
+        public void shiftMonarca()
         {
-
             if (dinastia == Dinastia.Avis)
             {
                 this.sDinastia = "Avis";
@@ -56,29 +55,45 @@ namespace PresidentesBr.Model
             {
                 this.sReinado = "O reino de Portugal e Algarves";
             }
-            else if(reinado==Reinado.UniaoIberica)
+            else if (reinado == Reinado.UniaoIberica)
             {
                 this.sReinado = "A União Ibérica";
             }
-            else if(reinado==Reinado.Restauracao)
+            else if (reinado == Reinado.Restauracao)
             {
                 this.sReinado = "A restauração da Indepêndencia de portugal";
             }
-            else if(reinado==Reinado.ReinoUnido)
+            else if (reinado == Reinado.ReinoUnido)
             {
                 this.sReinado = "O Reino Unido de Portugal, Brasil e Algarves";
             }
-            else if(reinado==Reinado.BrasilImperio)
+            else if (reinado == Reinado.BrasilImperio)
             {
                 this.sReinado = "O Brasil Império";
             }
-
-            return $"\n{name}, {nickName}, da dinastia de {sDinastia}, reinou o Brasil entre {arrival} e {conclusion}, durante o periodo conhecido como '{sReinado}'. Nasceu em {born} e Morreu em {death}.\n";
         }
+
+        public override string ToString()
+        {
+            shiftMonarca();
+            return $"\n\t{name}, {nickName}, da dinastia de {sDinastia}, reinou o Brasil entre {arrival} e {conclusion}, durante o periodo conhecido como '{sReinado}'. Nasceu em {born} e Morreu em {death}.\n";
+        }
+
+        public string ListMonarca(int dinastiaCount, int reinadoCount, int select)
+        {
+            shiftMonarca();
+            int underscoreCalc = name.Length + nickName.Length + 2;
+            var underscore = new string('=', underscoreCalc);
+
+            return $"\n{name}, {nickName}\n{underscore}\n\n{select}.o(a) monarca do Brasil\n{dinastiaCount}.o(a) monarca da dinastia de {sDinastia}\n{reinadoCount}.o(a) monarca d{sReinado.ToLower()}\n\nReinado:\t{arrival} a {conclusion}\nNascimento:\t{born}\nMorte:\t\t{death}";
+        }
+
         public bool Equals(Monarca other)
         {
             if (other == null) return false;
             return (this.name.Equals(other.name));
         }
-    }
+
+
+    }    
 }

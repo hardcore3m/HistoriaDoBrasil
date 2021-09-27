@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using PresidentesBr.Model;
 using PresidentesBr.Model.Enums;
 using PresidentesBr.Interface;
+using System.Linq;
 
 
 namespace PresidenteBr.Presentation
@@ -52,7 +53,7 @@ namespace PresidenteBr.Presentation
         {
             Console.WriteLine("\n===========================\n\nDeseja fazer nova consulta?\n 1 - Sim ");
             GetUserInput();
-            if (select==1)
+            if (select == 1)
             {
                 Main();
             }
@@ -79,6 +80,7 @@ namespace PresidenteBr.Presentation
         static int select = 0;
         static void GetUserInput()
         {
+            Console.WriteLine("\n");
             string option = Console.ReadLine();
             bool sucess = Int32.TryParse(option, out int valor);
             if (sucess)
@@ -120,7 +122,7 @@ namespace PresidenteBr.Presentation
             monarcas.Add(new Monarca("Filipe II", "O Pio", "13 de setembro de 1598", 1598, "31 de março de 1621	", 1621, "14 de abril de 1578 - Madrid", "31 de março de 1621 - Madrid", Dinastia.habsburgo, Reinado.UniaoIberica));
             monarcas.Add(new Monarca("Filipe III", "O Grande", "31 de março de 1621", 1621, "1 de dezembro de 1640", 1640, "8 de abril de 1605 - Valladolid, Espanha", "17 de setembro de 1665 - Madrid", Dinastia.habsburgo, Reinado.UniaoIberica));
             monarcas.Add(new Monarca("D. João IV", "O Restaurador", "1 de dezembro de 1640", 1640, "6 de dezembro de 1656", 1656, "19 de março de 1604 - Paço Ducal de Vila Viçosa", "6 de novembro de 1656 - Paço da Ribeira, Lisboa", Dinastia.Bragança, Reinado.Restauracao));
-            monarcas.Add(new Monarca("D. Afonso VI", "O Vitorioso", "6 de dezembro de 1656", 1656, "12 de setembro de 1683", 1683, "21 de agosto de 1643 - Paço da Ribeira, Lisboa", "12 de setembro de 1683 - Palácio de Sintra", Dinastia.Bragança, Reinado.UniaoIberica));
+            monarcas.Add(new Monarca("D. Afonso VI", "O Vitorioso", "6 de dezembro de 1656", 1656, "12 de setembro de 1683", 1683, "21 de agosto de 1643 - Paço da Ribeira, Lisboa", "12 de setembro de 1683 - Palácio de Sintra", Dinastia.Bragança, Reinado.Restauracao));
             // monarcas.Add(new Monarca("","","",,"",,"","",Dinastia.,Reinado.));
             // monarcas.Add(new Monarca("","","",,"",,"","",Dinastia.,Reinado.));
             // monarcas.Add(new Monarca("","","",,"",,"","",Dinastia.,Reinado.));
@@ -131,13 +133,13 @@ namespace PresidenteBr.Presentation
             // monarcas.Add(new Monarca("","","",,"",,"","",Dinastia.,Reinado.));
             // monarcas.Add(new Monarca("","","",,"",,"","",Dinastia.,Reinado.));
 
-            monarcas.Add(new Monarca("D. Pedro I","O Libertador","12 de outubro de 1822",1822,"7 de abril de 1831",1831,"12 de outubro de 1798 - Palácio Real de Queluz","24 de setembro de 1834 - Palácio Real de Queluz",Dinastia.Bragança,Reinado.BrasilImperio));
-            monarcas.Add(new Monarca("D. Pedro II","O Magnânimo","7 de abril de 1831",1831,"15 de novembro de 1889",1889,"2 de dezembro de 1825 - Palácio de São Cristóvão, Rio de Janeiro","5 de dezembro de 1891 - Paris",Dinastia.Bragança,Reinado.BrasilImperio));
+            monarcas.Add(new Monarca("D. Pedro I", "O Libertador", "12 de outubro de 1822", 1822, "7 de abril de 1831", 1831, "12 de outubro de 1798 - Palácio Real de Queluz", "24 de setembro de 1834 - Palácio Real de Queluz", Dinastia.Bragança, Reinado.BrasilImperio));
+            monarcas.Add(new Monarca("D. Pedro II", "O Magnânimo", "7 de abril de 1831", 1831, "15 de novembro de 1889", 1889, "2 de dezembro de 1825 - Palácio de São Cristóvão, Rio de Janeiro", "5 de dezembro de 1891 - Paris", Dinastia.Bragança, Reinado.BrasilImperio));
 
 
             MonarquiaTitle();
 
-            Console.WriteLine("\n\nDigite sua Opção:\n1 - Monarcas por ordem\n2 - Monarcas por dinastias\n3 - Monarcas por reinado\n4 - Consultar uma data");
+            Console.WriteLine("\n\nDigite sua Opção:\n1 - Monarcas por ordem\n2 - Monarcas por dinastias\n3 - Monarcas por reinado\n4 - Pesquisa por data\n5 - Consultar um Monarca\n6 - Pesquisa por nome");
             GetUserInput();
             if (select == 1)
             {
@@ -280,10 +282,96 @@ namespace PresidenteBr.Presentation
                 }
 
             }
+            else if (select == 5)
+            {
+                MonarquiaTitle();
+                Console.WriteLine("\nSelecione um Monarca\n\n");
+                for (int i = 0; i < monarcas.Count; i++)
+                {
+                    Console.Write($"{i + 1} | {monarcas[i].name} \t");
+                }
+
+                GetUserInput();
+
+                int selectMonarca = select - 1;
+
+                if (select <= monarcas.Count)
+                {
+
+                    int monarcaIndex = 0;
+                    int dinastiaCount = 0;
+                    int reinadoCount = 0;
+                    do
+                    {
+                        if (monarcas[monarcaIndex].dinastia == monarcas[selectMonarca].dinastia)
+                        {
+                            dinastiaCount++;
+                        }
+                        if (monarcas[monarcaIndex].reinado == monarcas[selectMonarca].reinado)
+                        {
+                            reinadoCount++;
+                        }
+                        monarcaIndex++;
+                    } while (monarcaIndex < select);
+                    MonarquiaTitle();
+                    Console.WriteLine(monarcas[selectMonarca].ListMonarca(dinastiaCount, reinadoCount, select));
+
+                    Continue();
+                }
+                else
+                {
+                    InvalidOption();
+                }
+            }
+            else if (select == 6)
+            {
+                MonarquiaTitle();
+                Console.WriteLine("Pesquise o seu monarca:");
+                string searchMonarca = Console.ReadLine().ToLower();
+                MonarquiaTitle();
+
+                Dictionary<int, string> searchMonarcaResults = new Dictionary<int, string>();
+
+                for (int i = 0; i < monarcas.Count; i++)
+                {
+                    if (monarcas[i].name.ToLower().Contains(searchMonarca))
+                    {
+                        searchMonarcaResults.Add(i, $"{monarcas[i].name} {monarcas[i].nickName}");
+                    }
+                }
+
+                foreach (KeyValuePair<int, string> item in searchMonarcaResults)
+                {
+                    Console.WriteLine($"({item.Key}), {item.Value}");
+                }
+
+                if (searchMonarcaResults.Count == 0)
+                {
+                    Console.WriteLine("Não foram encontrados monarcas que correspondem a sua pesquisa");
+                    Continue();
+                }
+                else
+                {
+                    string result;
+                    GetUserInput();
+                    if (searchMonarcaResults.TryGetValue(select, out result))
+                    {
+
+                        MonarquiaTitle();
+                        Console.WriteLine(monarcas[select]);
+                        Continue();
+                    }
+                    else
+                    {
+                        InvalidOption();
+                    }
+                }
+            }
             else
             {
                 InvalidOption();
             }
+
         }
 
         static void MonarquiaTitle()
@@ -301,7 +389,7 @@ namespace PresidenteBr.Presentation
             presidentes.Add(new Presidente(2, "Floriano Peixoto", "Floriano Vieira Peixoto", EMandato.Sucessao, ERepublica.Primeira, "23 de novembro de 1891", 1891, "15 de novembro de 1894", 1894, "30 de abril de 1839 - Maceió, Alagoas", "29 de junho de 1895 - Barra Mansa, Rio de Janeiro", "Militar", "Josina peixoto", "Nenhum"));
 
             RepublicaTitle();
-            Console.WriteLine("\n\nDigite sua Opção:\n1 - Presidentes por ordem\n2 - Presidentes por período\n3 - Presidentes por ascendência \n4 - Consultar uma data");
+            Console.WriteLine("\n\nDigite sua Opção:\n1 - Presidentes por ordem\n2 - Presidentes por período\n3 - Presidentes por ascendência \n4 - Consultar uma data\n5 - Consultar Presidente");
             GetUserInput();
             if (select == 1)
             {
@@ -337,16 +425,15 @@ namespace PresidenteBr.Presentation
 
                 if (select >= 1889 && select <= 2022)
                 {
-
-
                     foreach (Presidente pres in presidentes)
                     {
+
                         if (select >= pres.startYear && select <= pres.endYear)
                         {
                             Console.WriteLine($"\n{pres.QuickList(pres.shortName, pres.career, pres.arrival, pres.conclusion)}");
                         }
                     }
-                    Continue();
+
                 }
                 else if (select < 1889)
                 {
@@ -357,25 +444,98 @@ namespace PresidenteBr.Presentation
                 else if (select > 2022)
                 {
                     Console.WriteLine("\nVocê inseriu uma data no futuro.\n\nProvalvemente não teremos mais democracia nesta época, nem votação digital.");
-                    PutDateRepublic();
+                    Continue();
                 }
+            }
+            else if (select == 5)
+            {
+                RepublicaTitle();
+                Console.WriteLine("\nSelecione um Presidente\n\n");
+                foreach (Presidente pres in presidentes)
+                {
+                    Console.Write($"{pres.order} | {pres.shortName} \t");
+                }
+                GetUserInput();
+                int selectPresidente = select - 1;
+
+
+                if (select <= presidentes.Count)
+                {
+                    int presidenteIndex = 0;
+                    int republicaCount = 0;
+
+                    do
+                    {
+                        if (presidentes[presidenteIndex].republica == presidentes[selectPresidente].republica)
+                        {
+                            republicaCount++;
+                        }
+                        presidenteIndex++;
+                    } while (presidentes[presidenteIndex].order < select);
+                    RepublicaTitle();
+                    Console.WriteLine(presidentes[selectPresidente].ListPresidentes(republicaCount));
+
+                    Continue();
+                }
+                else
+                {
+                    Fail();
+                }
+            }
+            else if (select == 6)
+            {
+                RepublicaTitle();
+                Console.WriteLine("Pesquise o seu presidente:");
+                string searchPresidente = Console.ReadLine().ToLower();
+
+                Dictionary<int, String> searchPresidenteResults = new Dictionary<int, String>();
+                for (int i = 0; i < presidentes.Count; i++)
+                {
+                    if (presidentes[i].name.ToLower().Contains(searchPresidente))
+                    {
+                        searchPresidenteResults.Add(presidentes[i].order, presidentes[i].name);
+                    }
+                    if (searchPresidenteResults.Count == 0)
+                    {
+                        Console.WriteLine("Não foram encontrados presidentes que correspondem a sua pesquisa");
+                        Continue();
+                    }
+                    else
+                    {
+                        foreach (KeyValuePair<int, string> item in searchPresidenteResults)
+                        {
+                            Console.WriteLine($"({item.Key}), {item.Value}");
+                        }
+                        string result;
+                        GetUserInput();
+                        if (searchPresidenteResults.TryGetValue(select, out result))
+                        {
+
+                            MonarquiaTitle();
+                            Console.WriteLine(presidentes[select]);
+                            Continue();
+                        }
+                        else
+                        {
+                            InvalidOption();
+                        }
+
+                    }
+                }
+
+
+
             }
             else
             {
                 InvalidOption();
             }
-
-
         }
         static void RepublicaTitle()
         {
             Console.Clear();
             Toolbar();
             Console.WriteLine("REPUBLICA FEDERATIVA DO BRASIL\n==============================\n\nO Período democrático Brasileiro foi de 15 de Novembro de 1889 até 31 de dezembro de 2022.\nEssas datas te lembram alguma coisa?\n===========================================================\n");
-
-        }
-        static void PutDateRepublic()
-        {
 
         }
 
@@ -386,4 +546,5 @@ namespace PresidenteBr.Presentation
         }
 
     }
+
 }
