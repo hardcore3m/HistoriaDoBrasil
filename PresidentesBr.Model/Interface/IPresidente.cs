@@ -6,5 +6,6 @@ namespace PresidentesBr.Interface
          string ListPresidentes(int republicaCount);
          string QuickList(string shortName,string career,string arrival,string conusion);
          string SearchPresidente(string SearchPresidente);
+         
     }
 }

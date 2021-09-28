@@ -15,13 +15,13 @@ C#.
 
 []PRESIDENTES []MONARCAS []PERIODOS HISTÓRICOS
 [x][x][]Desenvolvimento do modelo
-[][][]Desenvolvimento da interface
+[x][x][]Desenvolvimento da interface
 [x]Conectar ao backend
-[x][x][]Menu Relativo
+[x][x][x]Menu Relativo
 [x][x][]Lista Ordinária
-[][][]Filtar por período histórico
-[][][]Filtar por tipo
-[][][]Consulta por data
+[x][x][]Filtar por período histórico
+[x][x][]Filtar por tipo
+[x][x][]Consulta por data
 [][][]Popular Lista
 
 ## Minhas redes sociais

@@ -5,7 +5,6 @@ using PresidentesBr.Model.Enums;
 using PresidentesBr.Interface;
 using System.Linq;
 
-
 namespace PresidenteBr.Presentation
 {
     class Program
@@ -24,7 +23,9 @@ namespace PresidenteBr.Presentation
             Console.WriteLine("DADEDESAFIAONOS  SSOPEITOAPROPRIAMO");
             Console.WriteLine("TEOPATRIAAMADAIDOLATRADASALVESALVE!");
 
-            Console.WriteLine("\n\nDigite sua Opção\n1 - Monarcas do Brasil\n2 - Presidentes do Brasil");
+            Console.WriteLine("A prosperidade de alguns homens públicos do Brasil é uma prova evidente de que eles vêm lutando pelo progresso do nosso subdesenvolvimento. - Stanislaw Ponte Preta");
+
+            Console.WriteLine("\n\nDigite sua Opção\n1 - Monarcas do Brasil\n2 - Presidentes do Brasil\n3 - Períodos Históricos do Brasil");
             int select = Convert.ToInt32(Console.ReadLine());
 
             if (select == 1)
@@ -36,7 +37,9 @@ namespace PresidenteBr.Presentation
             {
                 Console.Clear();
                 Republica();
-
+            }
+            else if (select==3){
+               Period.DisplayPeriod();
             }
             else
             {
@@ -336,13 +339,13 @@ namespace PresidenteBr.Presentation
                 {
                     if (monarcas[i].name.ToLower().Contains(searchMonarca))
                     {
-                        searchMonarcaResults.Add(i, $"{monarcas[i].name} {monarcas[i].nickName}");
+                        searchMonarcaResults.Add(i, $"{monarcas[i].name}, {monarcas[i].nickName}");
                     }
                 }
-
+                Console.WriteLine($"Sua pesquisa:\t{searchMonarca}\nResultados encontrados: {searchMonarcaResults.Count}\n");
                 foreach (KeyValuePair<int, string> item in searchMonarcaResults)
                 {
-                    Console.WriteLine($"({item.Key}), {item.Value}");
+                    Console.WriteLine($"({item.Key})- {item.Value}");
                 }
 
                 if (searchMonarcaResults.Count == 0)
@@ -353,6 +356,7 @@ namespace PresidenteBr.Presentation
                 else
                 {
                     string result;
+                    Console.WriteLine("Insira o número do monarca que deseja pesquisar:");
                     GetUserInput();
                     if (searchMonarcaResults.TryGetValue(select, out result))
                     {
