@@ -15,7 +15,7 @@ namespace PresidentesBr.Model
             this.period = Periodos.periodList[id];
             this.details = details;
             this.startIn = startIn;
-            EndsIn = endsIn;
+            this.EndsIn = endsIn;
         }
 
         public int id { get; set; }

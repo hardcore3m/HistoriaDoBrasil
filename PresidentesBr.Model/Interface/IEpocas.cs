@@ -6,6 +6,6 @@ namespace PresidentesBr.Interface
     public interface IEpocas
     {
          bool Equals(Epocas other);
-
+        
     }
 }
